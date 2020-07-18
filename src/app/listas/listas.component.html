@@ -1,0 +1,52 @@
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header">
+      <h4 class="text-center">Listas de Tarefas</h4>
+    </div>
+    <div class="card-body">
+
+
+      <form action="post" class="form-group w-100" #frm="ngForm" (ngSubmit)="criarLista(frm)">
+        <div class="row mb-3">
+          <div class="col-10">
+            <input type="text" class="form-control" placeholder="Criar nova lista" name="nomeLista"
+                   [(ngModel)]="lista.nomeLista" required="">
+          </div>
+          <div class="col-2">
+            <button class="btn btn-success w-100" type="submit" [disabled]="frm.invalid">Criar</button>
+          </div>
+        </div>
+      </form>
+
+
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Lista</th>
+          <th scope="col">Status</th>
+          <th scope="col">Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let l of listas">
+          <th scope="row">{{l.id}}</th>
+          <td class="w-50">{{l.nomeLista}}</td>
+          <td class="w-25">{{l.status}}</td>
+          <td class="w-25">
+            <div class="row">
+              <button class="btn m-2 btn-info">Ver</button>
+              <button class="btn m-2 btn-warning">Editar</button>
+              <button class="btn m-2 btn-danger">Apagar</button>
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+</div>
+
+

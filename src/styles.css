@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.background{
+  background-color: #EEEEEE;
+}
+
+.destaque{
+  background-color: #5A5A66;
+}
+.blue{
+  background-color: #6763ce;
+}
